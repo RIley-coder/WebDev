@@ -1,3 +1,52 @@
+<?php
+//processStudentLogin.php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {//Check it is coming from a form
+    
+		//mysql credentials
+    $mysql_host = "localhost";
+    $mysql_username = "root";
+    $mysql_password = "";
+    $mysql_database = "hallpass";
+	
+	//delcare PHP variables
+	
+	$password = $_POST["password"];
+	$firstName = $_POST["firstName"];
+	$lastName = $_POST["lastName"];
+	$currentLocation = $_POST["currentLocation"];
+	$destinationLocation = $_POST["destinationLocation"];
+	$postButton = $_POST["givePass"];
+    $passError = ("Please enter a Valid password");
+	
+	if (empty($password)){
+        die($passError);
+	}   
+if ($password == "123")	
+{
+	//Open a new connection to the MySQL server
+	//see https://www.sanwebe.com/2013/03/basic-php-mysqli-usage for more info
+	$mysqli = new mysqli($mysql_host, $mysql_username, $mysql_password, $mysql_database);
+    
+	//Output any connection error
+	if ($mysqli->connect_error) {
+		die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
+	}   
+    
+	$statement = $mysqli->prepare("INSERT INTO studentpass (firstName, lastName, currentLocation, destinationLocation) VALUES(?, ?, ?, ?)"); //prepare sql insert query
+	//bind parameters for markers, where (s = string, i = integer, d = double,  b = blob)
+	$statement->bind_param('ssss', $firstName, $lastName, $currentLocation, $destinationLocation); //bind value
+	 if($statement->execute()){
+	//print output text
+	
+	 }else{
+		 print $mysqli->error; //show mysql error if any 
+	 }
+}
+else{ 
+die($passError);
+}	
+}			
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 9.0
@@ -59,10 +108,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
-                    <a href="index.php" class="nav-item nav-link ">Home</a>
+                    <a href="index.php" class="nav-item nav-link active ">Home</a>
                     <a href="Script.html" class="nav-item nav-link">Games</a>
                     <a href="music.html" class="nav-item nav-link " tabindex="-1">Music</a>
-                    <a href="List.html" class="nav-item nav-link active" tabindex="-2">Lists</a>
+                    <a href="List.html" class="nav-item nav-link" tabindex="-2">Lists</a>
                     <a href="AboutMe.html" class="nav-item nav-link">About Me</a>
                     <a href="wheresMyStudent.html" class="nav-item nav-link">Hall Pass</a>
                     <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled" tabindex="-2">Contact</a>
@@ -74,54 +123,19 @@
             </div>
         </nav>
     </div>
-    <h3 class='text-left my-3'>Riley's Favorite Foods and Resturants</h3>
 
+    <?php echo nl2br("Hello ". $firstName ." ". $lastName . "! You are headed to ". $destinationLocation.  "\r\nYou have 8 minutes to return to ". $currentLocation . "\r\n", false); ?>
+    <center>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTm6FmD6K8OBohTfoT3hDVlx2lkg4bJjKUnnl2k33d5Qo5d65JC%3Ahttps%3A%2F%2Fst3.depositphotos.com%2F8056928%2F19589%2Fv%2F1600%2Fdepositphotos_195896728-stock-illustration-strict-cartoonish-mustachioed-man-gray.jpg&usqp=CAU"height=300pxS>
+        
+    </center>
+<center>
+    <img src=" https://cdn.quotesgram.com/img/48/30/690145042-unique-funny-bad-teacher-quotes-14.jpg
+    "height=300pxS>
+   
+    
+    </center>
 
+    <body>
 
-    <div class="wideMargin" id="content">
-
-
-        <h3>Foods</h3>
-        <ol>
-            <li>Fried Chicken</li>
-            <li>Pizza</li>
-            <li>Burrito</li>
-        </ol>
-
-
-        <p>
-
-
-            <h3>Resturants</h3>
-            <ol start="5">
-                <li>Canes</li>
-                <li>Pizza Ranch</li>
-                <li>Qudoba
-
-
-                    <h4>Why Are These Foods Good?</h4>
-
-                    <ul>
-                        <li>Makes you want to cry because the food is so good</li>
-                        <li>Very Salty</li>
-                        <li>The more junk food you eat the easier it is to come off</li>
-
-                    </ul>
-
-                    <script src='Jquery.html'></script>
-                    <script>
-                        var lis = JQuery('ul li')
-                        $(ul li).addClass('emphasis'):
-
-                    </script>
-
-
-                    <p>
-                        <div>
-                            <div class="wideMargin" id="footer">
-
-                            </div>
-
-                            <body>
-
-                                <html>
+        <html>

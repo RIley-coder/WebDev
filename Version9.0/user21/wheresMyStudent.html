@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Where's My Student</title>
     <!-- Bootstrap CSS -->
-   
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,7 +34,7 @@
             margin: 15px;
         }
 
-      
+
 
         td {
             color: #FF0000;
@@ -73,15 +73,14 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
-                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="index.php" class="nav-item nav-link">Home</a>
                     <a href="Script.html" class="nav-item nav-link">Games</a>
                     <a href="music.html" class="nav-item nav-link" tabindex="-1">Music</a>
                     <a href="List.html" class="nav-item nav-link" tabindex="-1">Lists</a>
                     <a href="AboutMe.html" class="nav-item nav-link">About Me</a>
                     <a href="wheresMyStudent.html" class="nav-item nav-link active">Hall Pass</a>
-                        <a href="Ebay copy.php" class="nav-item nav-link">Ebay</a>
                     <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link" tabindex="-2">Contacts</a>
-                    
+
                     <!----------------------------------^ Edit These Items in your Menu ^ ------------->
                 </div>
                 <div class="navbar-nav ml-auto">
@@ -90,103 +89,103 @@
             </div>
         </nav>
     </div>
-    </body>
+</body>
 
 </html>
 
-    <style type="text/css">
-        #scroll {
-            position: absolute;
-            white-space: nowrap;
-            top: 0px;
-            left: 400px;
-        }
+<style type="text/css">
+    #scroll {
+        position: absolute;
+        white-space: nowrap;
+        top: 0px;
+        left: 400px;
+    }
 
-        #oScroll {
-            margin: 0px;
-            padding: 0px;
-            position: relative;
-            width: 500px;
-            height: 300px;
-            overflow: hidden;
-        }
+    #oScroll {
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        width: 500px;
+        height: 300px;
+        overflow: hidden;
+    }
 
-    </style>
-    <script type="text/javascript">
-        function scroll(oid, iid) {
-            this.oCont = document.getElementById(oid);
-            this.ele = document.getElementById(iid);
-            this.width = this.ele.clientWidth;
-            this.n = this.oCont.clientWidth;
-            this.move = function() {
-                this.ele.style.left = this.n + "px";
-                this.n--;
-                if (this.n < (-this.width)) {
-                    this.n = this.oCont.clientWidth
-                }
+</style>
+<script type="text/javascript">
+    function scroll(oid, iid) {
+        this.oCont = document.getElementById(oid);
+        this.ele = document.getElementById(iid);
+        this.width = this.ele.clientWidth;
+        this.n = this.oCont.clientWidth;
+        this.move = function() {
+            this.ele.style.left = this.n + "px";
+            this.n--;
+            if (this.n < (-this.width)) {
+                this.n = this.oCont.clientWidth
             }
         }
-        var vScroll
+    }
+    var vScroll
 
-        function setup() {
-            vScroll = new scroll("oScroll", "scroll");
-            setInterval("vScroll.move()", 10)
-        }
-        onload = function() {
-            setup()
-        }
+    function setup() {
+        vScroll = new scroll("oScroll", "scroll");
+        setInterval("vScroll.move()", 10)
+    }
+    onload = function() {
+        setup()
+    }
 
-    </script>
-    <center>
-        <div id="oScroll">
-            <div id="scroll"><img src="saberhead.png" border="0px" width="400px" height="235px"> </div>
-            </div>
-    </center>
-    <br>
-    <br>
-    <center>
-        <form method='post' action='processStudentLogin.php'>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <input type="text" class="form-control" placeholder="First Name" name='firstName'>
-                    </div>
-                    <div class="col-xs-6">
-                        <input type="text" class="form-control" placeholder="Last Name" name='lastName'>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="col-xs-12">
-                        <input type="text" class="form-control" placeholder="Current Location" name='currentLocation'>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="col-xs-12">
-                        <input type="text" class="form-control" placeholder="Destination Location" name='destinationLocation'>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <p><label for='Authentication Code'>Authentication Code</label></p>
-                    <input type='password' name='password' placeholder="Teacher Code">
-                    <br>
-                    <br>
-                    <p><input type='submit' value="Give Pass">
-                        <!-- <input name = 'edit2' type='submit' value = 'Edit'>
+</script>
+<center>
+    <div id="oScroll">
+        <div id="scroll"><img src="https://dw3jhbqsbya58.cloudfront.net/school-mascot/a/6/7/a67a824b-0f92-4fd6-8745-7e769cc11215.gif?version=634505575200000000" border="0px" width="400px" height="235px"> </div>
+    </div>
+</center>
+<br>
+<br>
+<center>
+    <form method='post' action='processStudentLogin.php'>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" placeholder="First Name" name='firstName'>
+                </div>
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" placeholder="Last Name" name='lastName'>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Current Location" name='currentLocation'>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-xs-12">
+                    <input type="text" class="form-control" placeholder="Destination Location" name='destinationLocation'>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p><label for='Authentication Code'>Authentication Code</label></p>
+                <input type='password' name='password' placeholder="Teacher Code">
+                <br>
+                <br>
+                <p><input type='submit' value="Give Pass">
+                    <!-- <input name = 'edit2' type='submit' value = 'Edit'>
                <input name = 'find2' type='submit' value = 'Find Student'>
                <input name = 'del2' type='submit' value = 'Remove Record'>-->
-                    </p>
-                    <br>
-                    <br>
-                    <br>
-                    <!-- jQuery library -->
-                   
-        <form>
-    <center>
+                </p>
+                <br>
+                <br>
+                <br>
+                <!-- jQuery library -->
 
-<html>
+                <form>
+                    <center>
+
+                        <html>

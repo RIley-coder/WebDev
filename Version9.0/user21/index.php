@@ -68,34 +68,35 @@ $currentTime = time();
         td {
             color: #FF0000;
         }
+
         .report-container {
-    border: #E0E0E0 1px solid;
-    padding: 20px 40px 40px 40px;
-    border-radius: 2px;
-    width: 550px;
-    margin: 0 auto;
-}
+            border: #E0E0E0 1px solid;
+            padding: 20px 40px 40px 40px;
+            border-radius: 2px;
+            width: 550px;
+            margin: 0 auto;
+        }
 
-.weather-icon {
-    vertical-align: middle;
-    margin-right: 20px;
-}
+        .weather-icon {
+            vertical-align: middle;
+            margin-right: 20px;
+        }
 
-.weather-forecast {
-    color: #212121;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 20px 0px;
-}
+        .weather-forecast {
+            color: #212121;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0px;
+        }
 
-span.min-temperature {
-    margin-left: 15px;
-    color: #929292;
-}
+        span.min-temperature {
+            margin-left: 15px;
+            color: #929292;
+        }
 
-.time {
-    line-height: 25px;
-}
+        .time {
+            line-height: 25px;
+        }
 
     </style>
     <style>
@@ -129,13 +130,12 @@ span.min-temperature {
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <!---------------------------------- Edit These Items in your Menu ------------->
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="index.php" class="nav-item nav-link active">Home</a>
                     <a href="Script.html" class="nav-item nav-link">Games</a>
                     <a href="music.html" class="nav-item nav-link" tabindex="-1">Music</a>
                     <a href="List.html" class="nav-item nav-link" tabindex="-1">Lists</a>
                     <a href="AboutMe.html" class="nav-item nav-link">About Me</a>
                     <a href="wheresMyStudent.html" class="nav-item nav-link">Hall Pass</a>
-                    <a href="Ebay.php" class="nav-item nav-link">Ebay</a>
                     <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link" tabindex="-2">Contacts</a>
                     <!----------------------------------^ Edit These Items in your Menu ^ ------------->
                 </div>
